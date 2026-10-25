@@ -1,0 +1,112 @@
+/* The Asdale way: plain, warm, easy to read. Copy and restyle freely. */
+
+:root {
+  --ink: #2b2620;
+  --soft: #6b6259;
+  --paper: #fbf7f1;
+  --card: #ffffff;
+  --accent: #b25e09;
+  --accent-soft: #f7e5d0;
+  --line: #e8dfd2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+}
+
+code, pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.92em;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 1.5rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar .home {
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.topbar .home:hover { color: var(--accent); }
+.topbar .author { color: var(--soft); font-size: 0.9rem; font-style: italic; }
+
+.layout { display: flex; max-width: 72rem; margin: 0 auto; gap: 2rem; padding: 2rem 1.5rem; }
+
+.sidebar { flex: 0 0 17rem; }
+.sidebar ol { list-style: none; margin: 0; padding: 0; }
+.sidebar li { margin-bottom: 0.4rem; }
+.sidebar a {
+  display: block;
+  color: var(--soft);
+  text-decoration: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+}
+.sidebar a:hover { background: var(--accent-soft); color: var(--accent); }
+.sidebar a.active { background: var(--accent); color: #fff; }
+
+.chapter { flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem; padding: 2rem 2.4rem 2.4rem; }
+
+.chapter h1 { margin-top: 0; font-size: 1.9rem; line-height: 1.25; }
+.chapter h2 { border-bottom: 1px solid var(--line); padding-bottom: 0.25rem; margin-top: 2.2rem; }
+.chapter h3 { color: var(--accent); }
+
+.chapter a { color: var(--accent); }
+
+.chapter blockquote {
+  margin: 1.2rem 0;
+  padding: 0.6rem 1rem;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-style: italic;
+}
+
+.chapter pre {
+  background: #f4efe7;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  padding: 0.9rem 1.1rem;
+  overflow-x: auto;
+}
+
+.chapter code { background: #f4efe7; padding: 0.1rem 0.35rem; border-radius: 0.25rem; }
+.chapter pre code { background: none; padding: 0; }
+
+.pager { display: flex; justify-content: space-between; margin-top: 2.5rem; gap: 1rem; }
+.nav-btn {
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+.nav-btn:hover { background: var(--accent-soft); }
+
+.big-toc { font-size: 1.15rem; line-height: 2; }
+
+footer { text-align: center; padding: 1.5rem; color: var(--soft); font-size: 0.85rem; }
+footer a { color: var(--soft); }
+
+@media (max-width: 50rem) {
+  .layout { flex-direction: column; padding: 1rem; }
+  .sidebar { flex: none; }
+  .chapter { padding: 1.3rem 1.2rem 1.6rem; }
+}
