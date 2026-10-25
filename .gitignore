@@ -1,5 +1,10 @@
-out/
-_site/
-__pycache__/
 *.pyc
 .DS_Store
+.env
+.env.*
+.venv/
+__pycache__/
+_site/
+dist/*.tmp
+node_modules/
+out/
